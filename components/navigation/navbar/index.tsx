@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import SideNav from "../LeftSidebar";
 import MobileNavigation from "./MobileNavigation";
 import Theme from "./Theme";
 
