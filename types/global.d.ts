@@ -11,7 +11,7 @@ interface Author {
 interface Question {
   _id: string;
   title: string;
-  tags: Tags[];
+  tags: Tag[];
   author: Author;
   createdAt: Date;
   upvotes: number;
