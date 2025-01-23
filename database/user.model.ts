@@ -11,7 +11,7 @@ export interface IUser {
   reputation?: number;
 }
 
-const UserSchema = new Schema(
+const UserSchema = new Schema<IUser>(
   {
     name: { type: String, required: true },
     username: { type: String, required: true },
@@ -20,7 +20,7 @@ const UserSchema = new Schema(
     image: { type: String, required: true },
     location: { type: String },
     portfolio: { type: String },
-    repuation: { type: Number, default: 0 },
+    reputation: { type: Number, default: 0 },
   },
   { timestamps: true },
 );
