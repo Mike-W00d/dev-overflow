@@ -25,6 +25,6 @@ const UserSchema = new Schema<IUser>(
   { timestamps: true },
 );
 // if the user already exists in the database then we will use the existing model otherwise we will create a new model using the type IUser and the UserSchema.
-const User = models?.user || model<IUser>("User", UserSchema);
+const User = models?.User || model<IUser>("User", UserSchema);
 
 export default User;

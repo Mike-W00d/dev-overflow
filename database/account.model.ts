@@ -21,6 +21,6 @@ const AccountSchema = new Schema<IAccount>(
   { timestamps: true },
 );
 // if models already exists user that if not create a new model of type IAccount and AccountSchema and export it.
-const Account = models?.account || model<IAccount>("Account", AccountSchema);
+const Account = models?.Account || model<IAccount>("Account", AccountSchema);
 
 export default Account;
