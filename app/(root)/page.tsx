@@ -6,10 +6,12 @@ import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
+import handleError from "@/lib/handlers/error";
+import { NotFoundError, ValidationError } from "@/lib/http-errors";
 
 const questions = [
   {
-    _id: 1,
+    _id: "1",
     title: "How to learn react",
     description: "I want to learn react, can someone help me with that?",
     tags: [
@@ -27,7 +29,7 @@ const questions = [
     createdAt: new Date("2021-09-01"),
   },
   {
-    _id: 2,
+    _id: "2",
     title: "How to learn JavaScript",
     description: "I want to learn react, can someone help me with that?",
     tags: [
