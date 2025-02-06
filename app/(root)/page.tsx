@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { auth } from "@/auth";
 import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
@@ -49,22 +50,16 @@ const questions = [
     createdAt: new Date("2024-11-29"),
   },
 ];
-const test = async () => {
-  try {
-    return await api.users.getAll();
-  } catch (error) {
-    return handleError(error);
-  }
-};
 
 interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>;
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
-  const users = await test();
+  const session = await auth();
 
-  console.log(users);
+  console.log("Session: ", session);
+
   // by default the query to an empty string to show all the questions
   const { query = "", filter = "" } = await searchParams;
   // filter the questions based on the search and filter
