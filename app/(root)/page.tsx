@@ -58,7 +58,7 @@ interface SearchParams {
 const Home = async ({ searchParams }: SearchParams) => {
   const session = await auth();
 
-  console.log("Session: ", session);
+  console.log(session);
 
   // by default the query to an empty string to show all the questions
   const { query = "", filter = "" } = await searchParams;
